@@ -38,7 +38,7 @@ CSS STRUCTURE:
   --bs-secondary: #FDEEE9;
   --bs-black: #111;
   --bs-light: #F1F1F0;
-  --bs-dark: #212529;
+  --bs-dark: #292124;
   --bs-gray: #949494;
   --bs-gray-dark: #51565b;
 
@@ -46,7 +46,7 @@ CSS STRUCTURE:
   --bs-secondary-rgb: 253, 238, 233;
   --bs-black-rgb: 17, 17, 17;
   --bs-light-rgb: 241, 241, 240;
-  --bs-dark-rgb: 29, 29, 28;
+  --bs-dark-rgb: #1b0c08;
 
   --bs-link-color: var(--bs-dark);
   --bs-link-color-rgb: 17, 17, 17;
@@ -222,7 +222,7 @@ a {
   --bs-link-hover-color-rgb: 131, 169, 172;
   --bs-body-color: var(--bs-light);
   --bs-body-color-rgb: 241, 241, 240;
-  --bs-body-bg: #111;
+  --bs-body-bg: #140a04;
   --bs-body-bg-rgb: 17, 17, 41;
 
   color: var(--bs-gray);
@@ -699,5 +699,11 @@ body{
 @media only screen and (min-width: 768px) {
 .padding-top {
   padding-top: 80px;
-}
+  }
+} 
+
+#header-nav {
+  background: var( --bs-dark);
+  opacity:1;
+  backdrop-filter: blur(26px)
 }
