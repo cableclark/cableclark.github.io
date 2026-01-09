@@ -696,6 +696,10 @@ body{
   height: auto;
 }
 
+.padding-top {
+  padding-top: 40px;
+  }
+
 @media only screen and (min-width: 768px) {
 .padding-top {
   padding-top: 80px;
@@ -706,4 +710,14 @@ body{
   background: var( --bs-dark);
   opacity:1;
   backdrop-filter: blur(26px)
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .3);
+    padding-left: calc(var(--bs-gutter-x) * .3);
+    margin-right: auto;
+    margin-left: auto;
 }
