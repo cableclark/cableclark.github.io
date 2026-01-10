@@ -267,9 +267,9 @@ a {
   line-height: 240%;
    border-bottom: 1px solid #ccc;
 }
-.swiper-pagination-bullet {
+/* .swiper-pagination-bullet {
       background: #8a7d7d;
-}
+} */
 
 #one-page-menu .nav-link::before {
   content: '';
@@ -720,4 +720,21 @@ body{
     padding-left: calc(var(--bs-gutter-x) * .3);
     margin-right: auto;
     margin-left: auto;
+}
+
+
+.video-small {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1440px) {
+.reset-padding {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem ;
+  }
+}
+@media only screen and (max-width: 991px) {
+.reset-flex {
+  justify-content: flex-start !important;
+}
 }
