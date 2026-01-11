@@ -738,3 +738,9 @@ body{
   justify-content: flex-start !important;
 }
 }
+
+@media only screen and (max-width: 991px) {
+  .mobile-margin {
+    margin: 2rem !important;
+  }
+}
