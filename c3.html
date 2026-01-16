@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <title>Signified Studio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Igor Stojanovski">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <body class=" homepage post-template" data-aos-easing="ease" data-aos-duration="1200" data-aos-delay="0">
+    <a class="menu-btn"><span></span></a>
+    <div class="container-fluid">
+      <div id="header-placeholder"></div>
+      <div class="card border-0 position-fixed bottom-0 end-0" style="max-width: 340px;z-index: 5;">
+        </a>
+      </div>
+      <main class="col-lg-10 offset-lg-2">
+        <div class="container">
+          <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+            <section id="about" class="my-5 py-5 aos-init aos-animate" data-aos="fade-up">
+              <span class="text-muted text-uppercase">Case study, Heuristic analysis
+              </span>
+              <div class="section-header" data-aos="fade-up">
+                <div class="col-lg-12 pb-5">
+                  <h2 class="display-1 txt-fx slide-up">Heuristic Analysis Of 2021 Citroën C3’s HMI </h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 pb-5">
+                  <div data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate">
+                    <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
+                      <li>
+                        <h5>Client</h5>
+                        <p>Learning project</p>
+                      </li>
+                      <li>
+                        <h5>Year</h5>
+                        <p>2026</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-6 pb-5">
+                  <div class="fs-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                    <p>The 2021 Citroën C3’s digital centralization prioritizes minimalist aesthetics over functional ergonomics, violating core UX heuristics like natural mapping and system visibility by nesting essential controls within a laggy touchscreen, ultimately increasing cognitive load and compromising driver safety.  </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="portfolio-image">
+                    <figure>
+                      <img src="./images/c3/c3-hero.png" alt="portfolio" class="img-fluid">
+                      <figcaption>2021 Citroën C3 vector illustration </figcaption>
+                  </div>
+                </div>
+              <div class="row d-flex justify-content-center align-items-center mt-5">
+              <div class="col-lg-8"">
+                <h2>Introduction</h2>
+                  <p>
+                       The 2021 Citroën C3 HMI operates on a philosophy of digital centralization, moving away from the distributed physical controls of previous generations. The system utilizes a 7-inch capacitive touchscreen as the primary nucleus for vehicle management. Including the AC, audio, and vehicle safety settings, this central hub consolidates essential functions into a unified software interface. By removing traditional rotary dials and buttons, Citroën  aimed to create a visually clean, minimalist cabin that reduces aesthetic clutter and aligns with a modern, tech-forward brand identity.</p>
+                 
+                  <p>
+                        Complementing the digital hub is a driver-focused hybrid instrument cluster. It retains large, high-contrast analogue dials for engine speed and vehicle velocity to ensure immediate glanceability. Positioned between these dials is a smaller digital display that handles dynamic data, such as fuel consumption and traffic sign alerts. </p>
+                        <p>
+                        While the steering wheel features tactile rollers and buttons to provide a secondary layer of control, the overall architecture prioritizes the touchscreen for the vast majority of cabin interactions. This creates an interface that is sleek and modern in appearance, though it requires the driver to navigate nested digital menus for tasks that were historically handled by physical, tactile affordances.
+                      </p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center mt-3">
+                  <div class="portfolio-image col-lg-8">
+                    <figure>
+                      <img src="./images/c3/c3-dash.jpg" alt="portfolio" class="img-fluid">
+                      <figcaption>2021 Citroën C3 dashboard</figcaption>
+                  </div>
+                </div>
+              <div class="row ow d-flex justify-content-center align-items-center mt-5">
+               <div class="col-lg-8">
+                <h2>The Problem of Digital Centralization</h2>
+                    <p>
+                      In the context of automotive HMI and industrial design, digital centralization refers to the consolidation of multiple, disparate physical controls and information displays into a single, unified digital interface, typically a central touchscreen. This shift moves the vehicle’s operation from a distributed physical architecture to a hierarchical software architecture, where these functions are nested within a digital operating system.
+                    </p>
+                    <p>
+                      Nevertheless, this approach has resulted in a variety of UX bottlenecks and pain points. For example, according to interaction cost theory, centralization often increases the interaction cost.  Interaction cost is defined as the sum of physical and mental efforts required to reach a goal. By nesting functions, the time-on-task increases compared to distributed physical controls (Nielsen, 1993). Furthermore, Wickens' multiple resource theory is often used to critique digital centralization. It suggests that humans process information better when it is distributed across different modalities (for example, tactile for AC, visual for speed). Centralizing everything into the visual modality can lead to information overload (Wickens, 2008).  
+                    </p>
+                    <p>
+                     Bilägare (2020) specifically identifies this "centralized digital-only" approach as a primary pain point for driver safety and task efficiency. In addition, in their recent safety briefings, Euro NCAP (2024) defines the over-reliance on centralized touchscreens as a "distraction risk," leading to their 2026 mandate for the re-introduction of physical buttons for critical functions.
+                    </p>
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-5">
+               <div class="col-lg-8">
+                  <h2>A heuristic analysis of C3 2021 system</h2>
+                  <p> This is a breif heuristic analysis of the 2021 Citroën C3 HMI based on Jakob Nielsen's 10 Usability Heuristics for User Interface Design (Nielsen, 1993). The analysis focuses on key areas where the system excels or falls short in terms of usability and user experience.</p>
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-3">
+               <div class="col-lg-8">
+                <h3>Aesthetic and Minimalist Design vs. Visibility of System Status</h3>
+                    <p>
+                      The C3 interior adheres strictly to the Aesthetic and Minimalist Design heuristic. By removing physical switchgear, Citroën achieved a "clean" cockpit that reduces visual noise (Stellantis, 2021). However, this creates a conflict with the Visibility of System Status. In a driving context, "status" includes immediate feedback from environmental controls. Because the AC settings are nested within the digital layer, the system fails to provide a persistent, "at-a-glance" confirmation of the cabin state unless the specific menu is active. This lack of a dedicated status indicator for secondary tasks forces the driver to divert visual attention from the primary driving task to the central hub.
+                    </p>               
+                  </div>
+                </div>
+                 <div class="row d-flex justify-content-center align-items-center mt-3">
+                  <div class="portfolio-image col-lg-8">
+                    <figure>
+                      <img src="./images/c3/c3-ac.jpg" alt="portfolio" class="img-fluid">
+                      <figcaption>2021 Citroën C3 HVAC controls</figcaption>
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-3">
+               <div class="col-lg-8">
+              
+                <h3>Match Between System and the Real World</h3>
+                    <p>
+                     A critical failure in this model is the departure from Natural Mapping. In the "real world" of automotive operation, rotary dials provide a physical metaphor for "more" or "less" that can be operated via muscle memory. The 2021 C3 replaces these with digital sliders. Bilägare (2020) highlights that touch-based buttons lack the tactile notches of physical gear, forcing users to rely entirely on the visual modality that resembles lift buttons, rather than AC controls.. This, in effect,  breaks the expected mental model of vehicle operation where high-frequency tasks should be reachable without visual confirmation.
+                    </p>               
+                  </div>
+                </div>
+                 <div class="row d-flex justify-content-center align-items-center">
+                  <div class="portfolio-image col-lg-8">
+                    <figure>
+                      <img src="./images/c3/c3-buttons.jpg" alt="portfolio" class="img-fluid">
+                      <figcaption>2021 Citroën C3 HVAC controls</figcaption>
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-3">
+                  <div class="col-lg-8">
+                  <h3>Flexibility and Efficiency of Use</h3>
+                      <p>
+                      The system offers some flexibility through the inclusion of steering wheel hotkeys and rollers, which allow for "blind" control of audio and basic trip data. The dial and buttons on the left are used to control parameters on the dashboard, while the ones on the right for the music player and phone functionality of the screen. However, it could be argued that the Efficiency of Use for expert users is hampered by the "modal" nature of the screen. An expert driver is not able to multitask, they cannot adjust the fan speed while monitoring a complex navigation junction. This task interference is a significant heuristic violation in an environment where safety is essential. The system forces a serial interaction model (one task at a time) in a high-stakes environment that often requires parallel processing, for instance,  driving and adjusting comfort at the same time.
+                      </p>               
+                    </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-3">
+                  <div class="col-lg-8">
+                  <h3>Error Prevention and User Control</h3>
+                      <p>
+                      The hardware platform in the mid-tier C3 is prone to input latency. In effect, the screen transitions just feel laggy and choppy very often. According to Nielsen (1993), system response times exceeding 0.1 seconds break the feeling of instantaneous communication. When the screen lags, it violates the Error Prevention heuristic. Users often assume a touch was not registered and they tap again. This could lead to a double-click error that navigates them deeper into an unwanted menu. Without a physical "Home" button or a consistent "Emergency Exit" (Heuristic #3: User Control and Freedom), recovering from these accidental navigations while driving becomes a high-stress operation.
+                      </p>               
+                    </div>
+                </div>
+                 <div class="row d-flex justify-content-center align-items-center mt-3">
+                  <div class="portfolio-image col-lg-8">
+                    <figure>
+                      <img src="./images/c3/c3-ac2.jpg" alt="portfolio" class="img-fluid">
+                      <figcaption>Which one is on and which one off?</figcaption>
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-3">
+                  <div class="col-lg-8">
+                  <h3>Semiotic conflict in the use of color</h3>
+                      <p>
+                      The color-coding of the HVAC icons on the 2021 C3 touchscreen presents a significant violation of the Consistency and Standards heuristic, as it subverts the common mental models established in automotive and consumer electronic interfaces. In the C3, the choice to use white to signify Off and blue to signify On for the air vents in the vehicle creates a semiotic conflict. On the other hand, the On/Off state on the buttons in bottom secession  is signified by blue and desaturated blue. A driver looking to turn on or off a specific vent may perceive the blue icon as an off state since it is a darker shade. This chromatic ambiguity increases cognitive processing time, as the driver cannot rely on universal color associations to confirm the system's status at a glance.
+                      </p>               
+                    </div>
+                </div>
+              <div class="row ow d-flex justify-content-center align-items-center mt-5">
+               <div class="col-lg-8">
+                <h2>Conclusion</h2>
+                    <p>
+                      The 2021 Citroën C3 HMI represents a pivotal moment in automotive design where visual brand identity was prioritized over functional ergonomics. While the interface succeeds in creating a sleek, "iPad-like" cabin atmosphere (Auto&Design, 2016), it fundamentally fails the core UX requirement of the automotive context: minimizing "eyes-off-road" time.
+                    </p>       
+                      <p>
+                      The transition from tactile, distributed controls to a centralized, hierarchical software architecture increases the interaction cost for essential tasks. By violating basic heuristics—specifically Natural Mapping and Visibility of System Status—the system forces drivers to rely on visual confirmation for tasks that should be intuitive and muscle-memory-driven. Ultimately, the C3’s HMI serves as a case study in how "minimalist" modernism can inadvertently sacrifice user safety and efficiency for the sake of a clean aesthetic.
+                    </p>           
+                  </div>
+                </div>
+                <div class="row ow d-flex justify-content-center align-items-center mt-5">
+               <div class="col-lg-8">
+              <section id="references-section"></section>
+                <h2>References</h2>
+                <ul class="references">
+                      <li>
+                        Auto&amp;Design. (2016, September). <i>Citroën C3, designing wellbeing</i>. 
+                        <a href="https://autodesignmagazine.com/en/2016/09/citroen-c3-design-del-benessere/" target="_blank">https://autodesignmagazine.com/en/2016/09/citroen-c3-design-del-benessere/</a>
+                      </li>
+                      <li>
+                        Euro NCAP. (2024). <i>Safer interiors: The transition back to tactile controls</i> [Safety standards bulletin]. 
+                        <a href="https://www.euroncap.com/en/press-media/press-releases/euro-ncap-announces-2026-protocol-changes-to-tackle-modern-driving-risks/" target="_blank">https://www.euroncap.com/en/press-media/press-releases/euro-ncap-announces-2026-protocol-changes-to-tackle-modern-driving-risks/</a>
+                      </li>
+                      <li>
+                        Nielsen, J. (1993). <i>Usability engineering</i>. Morgan Kaufmann.
+                      </li>
+                      <li>
+                        Stellantis Media. (2021, February 11). <i>New Citroën C3: Ever more personality and comfort</i> [Press release]. 
+                        <a href="https://www.media.stellantis.com/em-en/citroen/press/new-citroen-c3-ever-more-personality-and-comfort" target="_blank">https://www.media.stellantis.com/em-en/citroen/press/new-citroen-c3-ever-more-personality-and-comfort</a>
+                      </li>
+                      <li>
+                        Vi Bilägare. (2020). <i>Physical buttons outperform touchscreens in new cars test finds</i>. 
+                        <a href="https://www.vibilagare.se/english/physical-buttons-outperform-touchscreens-new-cars-test-finds" target="_blank">https://www.vibilagare.se/english/physical-buttons-outperform-touchscreens-new-cars-test-finds</a>
+                      </li>
+                      <li>
+                        What Car?. (2021). <i>Citroen C3 review: Interior &amp; comfort</i>. 
+                        <a href="https://www.whatcar.com/citroen/c3/hatchback/review/n17228/interior-comfort" target="_blank">https://www.whatcar.com/citroen/c3/hatchback/review/n17228/interior-comfort</a>
+                      </li>
+                      <li>
+                        Wickens, C. D. (2008). Multiple resources and performance prediction. <i>Theoretical Issues in Ergonomics Science</i>, 9(6), 449–473. 
+                        <a href="https://doi.org/10.1080/14639220701811774" target="_blank">https://doi.org/10.1080/14639220701811774</a>
+                      </li>
+                    </ul>        
+                  </div>
+                </div>
+                </section>
+              <div id="button-placeholder"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
