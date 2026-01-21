@@ -4,7 +4,9 @@
   "description": "This is my personal portfolio website, designed and built to showcase selected projects, case studies, and my approach to design.   The site focuses on clarity, restraint, and usability — presenting work without unnecessary decoration.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,9 @@
   "homepage": "https://github.com/cableclark/cableclark.github.io#readme",
   "dependencies": {
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1",
+    "vite-plugin-handlebars": "^2.0.0"
   }
 }
