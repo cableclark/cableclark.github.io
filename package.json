@@ -1,0 +1,23 @@
+{
+  "name": "cableclark.github.io",
+  "version": "1.0.0",
+  "description": "This is my personal portfolio website, designed and built to showcase selected projects, case studies, and my approach to design.   The site focuses on clarity, restraint, and usability — presenting work without unnecessary decoration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cableclark/cableclark.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cableclark/cableclark.github.io/issues"
+  },
+  "homepage": "https://github.com/cableclark/cableclark.github.io#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
