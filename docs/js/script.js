@@ -96,10 +96,16 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 1200,
-      once: true
+      once: true,
+      anchorPlacement: 'top-bottom'
     });
   }
+  window.addEventListener('scroll', () => {
+  AOS.refresh();
 });
+});
+
+
 
 window.addEventListener('load', function() {
   const preloader = document.querySelector('.preloader');
