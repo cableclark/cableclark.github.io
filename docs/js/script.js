@@ -11,7 +11,6 @@ var overlayMenu = function () {
 
   menuBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    console.log('Menu clicked');
     body.classList.toggle('nav-active');
   });
 };
@@ -84,6 +83,8 @@ var initChocolat = function() {
   }
 };
 
+
+console.log("Script.js has started loading...");
 // ------------------------------------------------------------------------------ //
 // Initialize everything on Load
 // ------------------------------------------------------------------------------ //
@@ -91,33 +92,32 @@ document.addEventListener('DOMContentLoaded', function () {
   overlayMenu();
   initTextFx();
   initChocolat();
-
-  // Initialize AOS
+  console.log('Document Loaded');
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      duration: 900,
+      duration: 1200,
       once: true
     });
   }
 });
 
-// Window Load for Isotope and Preloader
 window.addEventListener('load', function() {
   const preloader = document.querySelector('.preloader');
   if (preloader) {
     preloader.style.opacity = '0';
-    setTimeout(() => preloader.style.display = 'none', 600);
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      
+      // THIS IS THE KEY:
+      window.dispatchEvent(new Event('scroll')); // Trick AOS into checking scroll position
+      AOS.refresh(); 
+    }, 600);
   }
-  
-  // 1. Initialize Isotope
   initIsotope();
-
-  // 2. IMPORTANT: Tell AOS to recalculate positions 
-  // now that the grid has settled.
-  if (typeof AOS !== 'undefined') {
-    AOS.refresh(); 
-  }
 });
+
+
+
 
 let body = document.querySelector('body');
 let menubtn = document.querySelector('.menu-btn');
