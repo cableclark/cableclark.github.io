@@ -3,7 +3,6 @@
 <head>
   <title>Signified Studio</title>
   <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="./images/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
@@ -11,68 +10,30 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   <meta name="description" content="">
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/vendor.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://signified.mk/">
+  <meta property="og:title" content="Signified Studio | Igor Stojanovski - Visual Designer">
+  <meta property="og:description" content="Visual Designer at Signified Studio. Specialized in UI/UX, web design, and digital products rooted in cultural understanding.">
+  <meta property="og:image" content="https://signified.mk/images-webp/hero-image.webp">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://signified.mk/">
+  <meta property="twitter:title" content="Signified Studio | Igor Stojanovski - Visual Designer">
+  <meta property="twitter:description" content="Visual Designer at Signified Studio. Specialized in UI/UX and cultural insight-driven digital products.">
+  <meta property="twitter:image" content="https://signified.mk/images-webp/hero-image.webp">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+ {{> scripts }}
 </head>
 <body class=" homepage post-template" data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
   <a class="menu-btn"><span></span></a>
   <div class="container-fluid overflow-hidden">
-    <header id="header-nav" class="col-lg-2 position-fixed px-5 bg-dark h-100 ">
-      <div class="header-wrap d-flex flex-column justify-content-between h-100">
-        <div class="navigation">
-          <!--Logo -->
-          <div class="site-logo mt-5">
-            <a href="index.html">
-              <img src="./images/signified-logo.png" alt="logo" class="img-fluid">
-            </a>
-          </div>
-            <!-- Main menu -->
-            <nav id="one-page-menu" class="vertical-menu my-5">
-              <ul class="menu-list list-unstyled">
-                  <li><a href="index.html#home" class="nav-link nav__list-item">Home</a></li>
-                  <li><a href="index.html#about" class="nav-link nav__list-item">About</a></li>
-                  <li><a href="index.html#portfolio" class="nav-link nav__list-item" >Works</a></li>
-                  <li><a href="index.html#experience" class="nav-link nav__list-item">Experience</a></li>
-                  <li><a href="index.html#contact" class="nav-link nav__list-item">Contact</a></li>
-              </ul>
-          </nav>
-        </div>
-        <!-- Social icons -->
-        <div class="mt-5">
-          <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
-            <li>
-              <a href="https://www.behance.net/signified" target="_blank" class="text-light small-icons">
-                <img src="./images/behance.png" alt="logo" class="icons small-icons">
-              </a>
-            </li>
-          <li>
-              <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/"  target="_blank" class="text-light">
-                <img src="./images/linkedin.png" alt="logo" class="icons small-icons">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/mutestutter/" target="_blank"class="text-light">
-                <img src="./images/instagram.png" alt="logo" class="icons small-icons">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>   
+    {{> header }}    
     <main class="col-lg-10 offset-lg-2">
       <div class="container">
-        <!-- content wrapper -->
-        <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
-          <!-- Hero section  -->
+        <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5"> 
           <section id="home" class="bg-text padding-top pb-5 mobile-margin">
             <div class="row mt-7 align-items-center d-flex justify-content-center">
               <div class="col-lg-6">
@@ -117,9 +78,6 @@
               <div class="col-lg-6" data-aos="fade-up">
                 <span class="text-muted text-uppercase">introduction</span>
                 <h2 class="display-1 txt-fx slide-up">About me</h2>
-                 <!-- <div class="banner-image text-center pb-5 small-image" data-aos="fade-right">
-                  <img src="images/myphoto.png" alt="banner" class="img-fluid" class="img-fluid">
-                </div> -->
               <p>I am visual designer working for over a decade for my own studio, Signified. </p>
                <p>  With extensive experience in web and digital interfaces design, I aim to bridge the gap between user needs, information clarity and tasteful nuanced presentation. Throughout the years, I have led the design for digital platforms, editorial layouts, and public-facing campaigns. My process is uniquely informed by social science research and cultural insight, allowing me to build digital products that are are visually compelling and deeply rooted in an psychological and cultural understanding of user behaviour.</p>
                <p>  I find the most fulfilment in partnering with organisations where I can apply my expertise to support causes that prioritise social value. </p>
@@ -138,78 +96,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper portfolio-Swiper portfolio-content py-4" data-aos="fade-up">
-              <div class="swiper-wrapper p-4">
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="c3.html" title="portfolio details"><img src="./images-webp/c3/c3-index.webp"
-                        alt="c3 image" class="img-fluid"></a>
-                  </div>
-                  <div class="caption d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="star.html" title="portfolio details"><img src="./images-webp/star/star_frontpage.webp"
-                        alt="star image" class="img-fluid"></a>
-                  </div>
-                  <div class="caption d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="duck.html" title="portfolio details"><img src="./images-webp/duck/Intro-1.webp"
-                        alt="star image" class="img-fluid"></a>
-                  </div>
-                  <div class="caption d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-                  <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="lost-and-found.html" title="portfolio details"><img src="./images-webp/lostandfound/lostandfound_frontpage.webp"
-                        alt="lostandfound image" class="img-fluid"></a>
-                  </div>
-                </div>
-                 <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="bakery.html" title="portfolio details"><img src="./images-webp/bakery/bakery.webp"
-                        alt="Bakery" class="img-fluid"></a>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="muff.html" title="portfolio details"><img src="./images-webp/muff/muff-frontpage.webp"
-                        alt="muff" class="img-fluid"></a>
-                  </div>
-                </div>
-              
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="analysis.html" title="portfolio details"><img src="./images-webp/analysis/naslovnazalink.webp"
-                        alt="Analysis image" class="img-fluid"></a>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="decade.html" title="portfolio details"><img src="./images-webp/decade/decada-box.webp"
-                        alt="Report cover image" class="img-fluid"></a>
-                  </div> 
-                </div>
-                 <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="cookbook.html" title="portfolio details"><img src="./images-webp/101/101.webp"
-                        alt="101 image" class="img-fluid"></a>
-                  </div> 
-                </div>
-                 <div class="swiper-slide">
-                  <div class="image-holder">
-                    <a href="americana.html" title="portfolio details"><img src="./images-webp/recipe/recipe-square.webp"
-                        alt="101 image" class="img-fluid"></a>
-                  </div> 
-                </div>
-              </div>
-              <div class="swiper-pagination mt-5 pt-5"></div>
-            </div>
+           {{> portfolio }}
           </section>
           <section id="experience" class="my-5 py-5 bg-text">
             <div class="row d-flex flex-wrap" data-aos="fade-up">
@@ -345,47 +232,12 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> 
           <!-- Contact Section  -->
-          <section id="contact" class="my-5 py-5 bg-text">
-            <div class="container">
-              <div class="row justify-content-center mb-5">
-                <div class="col-lg-6" data-aos="fade-up">
-                  <span class="text-muted text-uppercase">Personal Info</span>
-                  <h2 class="display-1 txt-fx slide-up">Contact Me</h2>
-                  <p>Write me a line at cableclark@gmail.com or reach me on social media</p>
-                  <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
-                    <li>
-                      <a href="https://www.behance.net/signified" target="_blank" class="text-light">
-                        <img src="./images/behance.png" alt="logo" class="icons small-icons">
-                      </a>
-                    </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/" target="_blank" class="text-light">
-                       <img src="./images/linkedin.png" alt="logo" class="icons small-icons">
-                    </a>
-                   </li>
-                  <li>
-                      <a href="https://www.instagram.com/mutestutter/" target="_blank" class="text-light">
-                        <img src="./images/instagram.png" alt="logo" class="icons small-icons">
-                      </a>
-                    </li>
-                </ul>
-                </div>
-              </div>
-            </div>
-          </section>
+        {{> contact }}
         </div>
         <!-- / content wrapper -->
       </div>
     </main>
   </div>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <script src="js/plugins.js"></script>
-  <!-- <script src="js/main.js"></script> -->
-   <script src="js/script.js"></script>
-</body>
-</html>
+  {{> footer }}

@@ -267,9 +267,13 @@ a {
   line-height: 240%;
    border-bottom: 1px solid #ccc;
 }
-/* .swiper-pagination-bullet {
+.swiper-pagination-bullet {
       background: #8a7d7d;
-} */
+}
+.swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
 
 #one-page-menu .nav-link::before {
   content: '';
