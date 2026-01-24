@@ -9,6 +9,9 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, 'partials'),
     }),
   ],
+  logLevel: 'info', // Options: 'info' | 'warn' | 'error' | 'silent'
+  clearScreen: false, // Prevents Vite from clearing the terminal so you can read full stack traces
+  // ... rest of your config,
   build: {
     outDir: 'docs', // This is the magic line for GitHub
     emptyOutDir: true, // Cleans the folder before each build

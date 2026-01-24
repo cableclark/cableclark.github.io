@@ -16,68 +16,32 @@
   <meta property="og:description" content="Showcasing the design and build of a custom e-commerce experience for an independent furniture studio.">
   <meta property="og:image" content="https://yourdomain.com/images-webp/duck/Intro.webp">
 
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yourdomain.com/pirate-duck.html">
-  <meta property="twitter:title" content="Pirate Duck Webshop Design | Signified Studio">
-  <meta property="twitter:description" content="UI/UX design and development for Pirate Duck furniture studio.">
-  <meta property="twitter:image" content="https://yourdomain.com/images-webp/duck/Intro.webp">
-
   <link rel="icon" type="image/x-icon" href="./images/favicon.png">
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  
   {{> scripts }}
 </head>
 
-<body class="homepage post-template">
-  <a class="menu-btn"><span></span></a>
-  
-  <div class="container-fluid">
     {{> header }}
-    
-    <div class="card border-0 position-fixed bottom-0 end-0" style="max-width: 340px; z-index: 5;">
-    </div>
-
-    <main class="col-lg-10 offset-lg-2">
-      <div class="container">
-        <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
-          
-          <section id="about" class="my-5 py-5" data-aos="fade-up">
-            <span class="text-muted text-uppercase">UI, Webdesign</span>
-            
-            <div class="section-header">
-              <div class="col-lg-12 pb-5">
-                <h2 class="display-1 txt-fx slide-up">Pirate Duck webshop</h2>
-              </div>
-            </div> <div class="row">
-              <div class="col-lg-4 pb-5">
-                <div data-aos="fade-up" data-aos-delay="200">
-                  <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
-                    <li>
-                      <h5>Client</h5>
-                      <p>Pirate Duck</p>
-                    </li>
-                    <li>
-                      <h5>Year</h5>
-                      <p>2025</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6 pb-5">
-                <div class="fs-5" data-aos="fade-up" data-aos-delay="300">
-                  <p>Pirate Duck Designs is an independent furniture studio where craftsmanship, function, and character intersect. I designed and built their website to reflect this balance—showcasing one-of-a-kind pieces that are thoughtfully made, accessible without being mass-produced, and suited to urban living.</p>
-                </div>
-              </div>
-            </div>
+  
+     {{> project-info 
+         category="UI, Webdesign"
+         title="Pirate Duck webshop" 
+         client="Pirate Duck" 
+          year="2025" 
+          description="Pirate Duck Designs is an independent furniture studio where craftsmanship, function, and character intersect. I designed and built their website to reflect this balance—showcasing one-of-a-kind pieces that are thoughtfully made, accessible without being mass-produced, and suited to urban living."
+      }}
            
             <div class="row">
+
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
                     <img src="./images-webp/duck/Intro.webp" alt="Pirate Duck Intro" class="img-fluid">
-                  </figure> </div>
+                  </figure> 
+                </div>
               </div>
+
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -85,6 +49,7 @@
                   </figure>
                 </div>
               </div>
+
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -92,9 +57,7 @@
                   </figure>
                 </div>
               </div>
-            </div>
             
-            <div class="row">
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -102,18 +65,15 @@
                   </figure>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
+           
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
                     <img src="./images-webp/duck/Wireframes.webp" alt="UX Wireframes" class="img-fluid">
-                  </figure> </div>
+                  </figure> 
+                </div>
               </div>
-            </div>
-
-            <div class="row">
+           
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -121,9 +81,7 @@
                   </figure>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
+         
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -131,14 +89,11 @@
                   </figure>
                 </div>
               </div>
+
             </div>
 
             {{> portfolio }} 
             {{> contact }}
-          </section> </div>
-      </div>
-    </main>
-  </div>
+        
+    
   {{> footer }}
-</body>
-</html>

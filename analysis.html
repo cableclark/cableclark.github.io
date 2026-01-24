@@ -14,13 +14,7 @@
     <meta property="og:url" content="https://yourdomain.com/research-report.html">
     <meta property="og:title" content="Research Report & Book Design | Signified Studio">
     <meta property="og:description" content="Custom illustrations and layout design for STAR Collective's research reports on digital rights and security.">
-    <meta property="og:image" content="https://yourdomain.com/images-webp/analysis/analysis1.webp">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourdomain.com/research-report.html">
-    <meta property="twitter:title" content="Research Report & Book Design | Signified Studio">
-    <meta property="twitter:description" content="Custom illustrations and layout design for STAR Collective's research reports.">
-    <meta property="twitter:image" content="https://yourdomain.com/images-webp/analysis/analysis1.webp">
+    <meta property="og:image" content="https://signified.mk/images-webp/analysis/analysis1.webp">
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <meta name="format-detection" content="telephone=no">
@@ -28,52 +22,17 @@
     
     {{> scripts }}
 </head>
-
-<body class="homepage post-template">
-    <a class="menu-btn"><span></span></a>
-    
-    <div class="container-fluid">
         {{> header }}
-        
-        <div class="card border-0 position-fixed bottom-0 end-0" style="max-width: 340px; z-index: 5;">
-            </div>
-
-        <main class="col-lg-10 offset-lg-2">
-            <div class="container">
-                <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
-                    
-                    <section id="about" class="my-5 py-5" data-aos="fade-up">
-                        <span class="text-muted text-uppercase">Book design</span>
-                        
-                        <div class="section-header">
-                            <div class="col-lg-12 pb-5">
-                                <h2 class="display-1 txt-fx slide-up">Research report design</h2>
-                            </div>
-                        </div>
+        {{> project-info 
+            category="Book design"
+            title="Research report design" 
+            client="STAR collective" 
+            year="2021" 
+            description="For these book design projects, I created custom front cover illustrations and structured layouts to present complex research on digital rights, security, and healthcare access for marginalized groups."
+        }}
 
                         <div class="row">
-                            <div class="col-lg-4 pb-5">
-                                <div data-aos="fade-up" data-aos-delay="200">
-                                    <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
-                                        <li>
-                                            <h5>Client</h5>
-                                            <p>STAR collective</p>
-                                        </li>
-                                        <li>
-                                            <h5>Year</h5>
-                                            <p>2021</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 pb-5">
-                                <div class="fs-5" data-aos="fade-up" data-aos-delay="300">
-                                    <p>For these book design projects, I created custom front cover illustrations and structured layouts to present complex research on digital rights, security, and healthcare access for marginalized groups.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -81,9 +40,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                       
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -91,9 +48,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                        
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -101,9 +56,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                       
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -111,9 +64,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                       
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -121,9 +72,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                     
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -131,9 +80,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                        
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -141,9 +88,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                       
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -151,9 +96,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
+                      
                             <div class="col-lg-12">
                                 <div class="portfolio-image">
                                     <figure>
@@ -162,17 +105,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        {{> back-button }}
-                    </section>
-                    
-                    {{> portfolio}}
-                    {{> contact }}
-                </div>
-            </div>
-        </main>
-    </div>
-    
+            {{> back-button }}
+                   
+            {{> portfolio}}
+            {{> contact }}
     {{> footer }}
-</body>
-</html>

@@ -16,9 +16,6 @@
   <meta property="og:description" content="Visual identity and character-driven logo design for Hearth & Bread.">
   <meta property="og:image" content="https://signified.mk/images-webp/bakery/1.webp">
 
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:image" content="https://signified.mk/images-webp/bakery/1.webp">
-
   <link rel="icon" type="image/x-icon" href="./images/favicon.png">
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,58 +23,24 @@
   {{> scripts }}
 </head>
 
-<body class="homepage post-template">
-  <a class="menu-btn"><span></span></a>
-  
-  <div class="container-fluid">
     {{> header }} 
-    <div id="header-placeholder"></div>
     
-    <main class="col-lg-10 offset-lg-2">
-      <div class="container">
-        <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+           {{> project-info 
+              category="Branding, logo design"
+              title="Bakery Branding" 
+              client="Hearth & Bread" 
+              year="2024" 
+              description="This branding project features a simple, character-driven logo paired with a limited palette of four warm tones to reflect the bakery’s brand identity."
+          }}
+
           
-          <section id="about" class="my-5 py-5" data-aos="fade-up">
-            <span class="text-muted text-uppercase">Branding</span>
-            
-            <div class="section-header">
-              <div class="col-lg-12 pb-5">
-                <h2 class="display-1 txt-fx slide-up">Hearth & Bread bakery branding</h2>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-4 pb-5">
-                <div data-aos="fade-up" data-aos-delay="200">
-                  <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
-                    <li>
-                      <h5>Client</h5>
-                      <p>Hearth & Bread</p>
-                    </li>
-                    <li>
-                      <h5>Year</h5>
-                      <p>2024</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6 pb-5">
-                <div class="fs-5" data-aos="fade-up" data-aos-delay="300">
-                  <p>This branding project features a simple, character-driven logo paired with a limited palette of four warm tones to reflect the bakery’s brand identity.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
                     <img src="./images-webp/bakery/1.webp" alt="Hearth & Bread Logo Design" class="img-fluid">
                   </figure> </div>
               </div>
-            </div>
-
-            <div class="row">
+            
               <div class="col-lg-6">
                 <div class="portfolio-image">
                   <figure>
@@ -92,9 +55,9 @@
                   </figure>
                 </div>
               </div>
-            </div>
+          
 
-            <div class="row">
+          
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -102,9 +65,7 @@
                   </figure>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
+           
               <div class="col-lg-6">
                 <div class="portfolio-image">
                   <figure>
@@ -112,6 +73,7 @@
                   </figure>
                 </div>
               </div>
+
               <div class="col-lg-6">
                 <div class="portfolio-image">
                   <figure>
@@ -119,9 +81,7 @@
                   </figure>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
+           
               <div class="col-lg-12">
                 <div class="portfolio-image">
                   <figure>
@@ -133,10 +93,5 @@
 
             {{> portfolio }} 
             {{> contact }}
-          </section> </div>
-      </div>
-    </main>
-  </div>
+         
   {{> footer }}
-</body>
-</html>
