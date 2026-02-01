@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
     <title>Case Study: Citroën C3 HMI Heuristic Analysis | Signified Studio</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Case Study: Citroën C3 HMI Heuristic Analysis | Signified Studio">
-    <meta name="description" content="A deep dive heuristic analysis of the 2021 Citroën C3’s HMI. Exploring digital centralization, natural mapping, and cognitive load in automotive UX.">
+    <meta name="description"
+        content="A deep dive heuristic analysis of the 2021 Citroën C3’s HMI. Exploring digital centralization, natural mapping, and cognitive load in automotive UX.">
     <meta name="author" content="Igor Stojanovski">
-    <meta name="keywords" content="UX Design, Heuristic Analysis, HMI Design, Automotive UX, Citroen C3, Jakob Nielsen, Interaction Cost">
+    <meta name="keywords"
+        content="UX Design, Heuristic Analysis, HMI Design, Automotive UX, Citroen C3, Jakob Nielsen, Interaction Cost">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://signified.mk/c3-analysis.html">
     <meta property="og:title" content="Citroën C3 HMI Heuristic Analysis | Signified Studio">
-    <meta property="og:description" content="Analyzing the UX bottlenecks of digital centralization in modern automotive interfaces.">
+    <meta property="og:description"
+        content="Analyzing the UX bottlenecks of digital centralization in modern automotive interfaces.">
     <meta property="og:image" content="https://signified.mk/images-webp/c3/c3-hero.webp">
 
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
@@ -28,321 +32,400 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
        <link rel="stylesheet" crossorigin href="/assets/style.css">
      </head>
-       <body class="homepage post-template">
-         <a class="menu-btn"><span></span></a>
-         <div class="container-fluid">
-           <header id="header-nav" class="col-lg-2 position-fixed px-5 bg-dark h-100 ">
-             <div class="header-wrap d-flex flex-column justify-content-between h-100">
-               <div class="navigation">
-                 <div class="site-logo mt-5">
-                   <a href="index.html">
-                     <img src="/assets/signified-logo.png" alt="logo" class="img-fluid">
-                   </a>
-                 </div>
-                 <nav id="one-page-menu" class="vertical-menu my-5">
-                   <ul class="menu-list list-unstyled">
-                       <li><a href="index.html#home" class="nav-link nav__list-item">Home</a></li>
-                       <li><a href="index.html#about" class="nav-link nav__list-item">About</a></li>
-                       <li><a href="index.html#portfolio" class="nav-link nav__list-item" >Projects</a></li> 
-                       <li><a href="index.html#experience" class="nav-link nav__list-item">Experience</a></li>
-                       <li><a href="index.html#contact" class="nav-link nav__list-item">Contact</a></li>
-                   </ul>
-                 </nav>
-                 </div>
-                   <!-- Social icons -->
-                 <div class="mt-5">
-                   <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
-                     <li>
-                       <a href="https://www.behance.net/signified" target="_blank" class="text-light small-icons">
-                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAGxAAABsQFhmCgOAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowYzQ5ZWFiNy04YjliLTQ3NjItYTczOC0xNmFiZTZiY2M0NWMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6MTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrbyqGYAAAKBSURBVFiFxdfPq1VVFAfwzz09f/TUjKKBqYFPKgwrqYGT6AcEIiLYqIk1qZENGtoktckDUahBNGhag0B4f0FBaATVoB8DRZQIxSBS0ffqidnr2+Dsm8fLubf7ePXOFxbnnLX22Wvt71prn7N7SQxgB/bjWTyEu5Eii0GvyA38hFP4CD/cMSpJU47m/8d002fT+cwyOO/jxGAAx5bReR/TSfSSbMPpReb3v8IjFQ505BwOVOpq7wrPVdjYYQCbK3Wfd4XJCSy0GIIj+FW9mfTxFyaxBa9j9RIDWJBktqVFFnLnBtUmDyf5ufHOqSQrk6xKsjbJinI9N6IVZydGRDeFH3EPduEurMBFfI5zOIwPy/gHcRD3Fpbm8Xt5Ho4RDEyVlT7eYn+62La32K4n+T7JlREr/4eBaow8tbG0qlzXNnSfYTvW40ncj0cLW4uafBAXcUidAuq0fKkuxGNF9y1eLPdTeBmf4hu8gPPY2jr7GCkYJs8nmS/jdxfdroF5+vo3h6VgHAYewBuN56v4QE3tPnyCr/rrwTTm1IV4rei/Hjr7GAzsaLG/XWwrk7yXZPJf2Nq0FAZuteh2lusfuIw16rZ7Fa/hOircp27F9cMmH6cLFoqjW0V+wfsN+z5sKPdz6o/bXuzBnzihLsZ2jJGCiSQbC42bkqxpUPtEGf9OQ/dSkneTvNXQ7R+WgqVsxduSnC3jb+Z2xQ/KziSXhwXQSzKLdYPEGP4xWo2n1H/OvYH3ZvCFuu834Bm8MiK9c70kv6mLqAvMV7jZkXO4UeFShwFcqnCywwBOdv1b/liFMzjegfPjONPV0Wym77eLw+nRps9elud4fkFd7B/ju+agvwE9VnmqNB3iMAAAAABJRU5ErkJggg==" alt="logo" class="icons small-icons">
-                       </a>
-                     </li>
-                   <li>
-                     <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/"  target="_blank" class="text-light">
+<body class="homepage post-template">
+  <a class="menu-btn"><span></span></a>
+  <div class="container-fluid">
+    <header id="header-nav" class="col-lg-2 position-fixed px-5 bg-dark h-100 ">
+      <div class="header-wrap d-flex flex-column justify-content-between h-100">
+        <div class="navigation">
+          <div class="site-logo mt-5">
+            <a href="index.html">
+              <img src="/assets/signified-logo.png" alt="logo" class="img-fluid">
+            </a>
+          </div>
+          <nav id="one-page-menu" class="vertical-menu my-5">
+            <ul class="menu-list list-unstyled">
+                <li><a href="index.html#home" class="nav-link nav__list-item">Home</a></li>
+                <li><a href="index.html#about" class="nav-link nav__list-item">About</a></li>
+                <li><a href="index.html#portfolio" class="nav-link nav__list-item" >Projects</a></li> 
+                <li><a href="index.html#experience" class="nav-link nav__list-item">Experience</a></li>
+                <li><a href="index.html#contact" class="nav-link nav__list-item">Contact</a></li>
+            </ul>
+          </nav>
+          </div>
+            <!-- Social icons -->
+          <div class="mt-5">
+            <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
+              <li>
+                <a href="https://www.behance.net/signified" target="_blank" class="text-light small-icons">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAGxAAABsQFhmCgOAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowYzQ5ZWFiNy04YjliLTQ3NjItYTczOC0xNmFiZTZiY2M0NWMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6MTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrbyqGYAAAKBSURBVFiFxdfPq1VVFAfwzz09f/TUjKKBqYFPKgwrqYGT6AcEIiLYqIk1qZENGtoktckDUahBNGhag0B4f0FBaATVoB8DRZQIxSBS0ffqidnr2+Dsm8fLubf7ePXOFxbnnLX22Wvt71prn7N7SQxgB/bjWTyEu5Eii0GvyA38hFP4CD/cMSpJU47m/8d002fT+cwyOO/jxGAAx5bReR/TSfSSbMPpReb3v8IjFQ505BwOVOpq7wrPVdjYYQCbK3Wfd4XJCSy0GIIj+FW9mfTxFyaxBa9j9RIDWJBktqVFFnLnBtUmDyf5ufHOqSQrk6xKsjbJinI9N6IVZydGRDeFH3EPduEurMBFfI5zOIwPy/gHcRD3Fpbm8Xt5Ho4RDEyVlT7eYn+62La32K4n+T7JlREr/4eBaow8tbG0qlzXNnSfYTvW40ncj0cLW4uafBAXcUidAuq0fKkuxGNF9y1eLPdTeBmf4hu8gPPY2jr7GCkYJs8nmS/jdxfdroF5+vo3h6VgHAYewBuN56v4QE3tPnyCr/rrwTTm1IV4rei/Hjr7GAzsaLG/XWwrk7yXZPJf2Nq0FAZuteh2lusfuIw16rZ7Fa/hOircp27F9cMmH6cLFoqjW0V+wfsN+z5sKPdz6o/bXuzBnzihLsZ2jJGCiSQbC42bkqxpUPtEGf9OQ/dSkneTvNXQ7R+WgqVsxduSnC3jb+Z2xQ/KziSXhwXQSzKLdYPEGP4xWo2n1H/OvYH3ZvCFuu834Bm8MiK9c70kv6mLqAvMV7jZkXO4UeFShwFcqnCywwBOdv1b/liFMzjegfPjONPV0Wym77eLw+nRps9elud4fkFd7B/ju+agvwE9VnmqNB3iMAAAAABJRU5ErkJggg==" alt="logo" class="icons small-icons">
+                </a>
+              </li>
+            <li>
+              <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/"  target="_blank" class="text-light">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAHYAAAB2AH6XKZyAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpkMDYxZmM5Yy0yMmRkLTQ2MDMtYmQwOC1jNDNlOTg2MDY0MzMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6NDMrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvcJEVQAAAIESURBVFiFzde9axRBGMfxz54hGuILogbfUigBK02jhcRCEGws1cJCEG38I7SJ1nZWgqkkGAQrO7ESU6fwHxASLRJCLjHnJcbHYk9yTnYvGG5zPrAM88w883yZfX6zO1lEwD48xU0cUa0t4A0eoZlFxCCmcb7ixKnNYKyG8R4kh1GMZxExhxM9AIC5LCJWMdAjgEYNG9tMWq4QYKOGKBls4gFO4RxeVwAQIqIexfYwIiTPdMncnVq9VkrGZIF/qttbUAaQYbjAP7JbAPDc3+q4ivvdBsgioo4DHea8xWlc6nZyLPd1GKzjgxxuVq6KK1jHKyzJJTyM25jHBL604s/gju0OuQ4qmEoUcLjl/5z4ByLiZUQcL1DNoYh4txMVwM+kP9hq04NrXV4b3wrWWMINfC1L0gkgfT39JTHtoGW19GInAP9iQ3gvr5UJ7EnGP1YN8AzX5DtwD3eT8dkqAfpwPfFdTvpNJd+cbgD026yPMluztai7BhByJbRbqpRfZcHdqoHtLOs1QKn91wCrSX+h1a4l/oat7/x7QWyhCjp9jM7iYFvgxVY7hGP40eqftPUEHEl8o2W5sohYxv4SiJU2gPYFGzZlNVCyePvP7KDi3V7JIqIhv5r1who1LPYoOSzW5D8XvbLJP5fTT7iwy8lnMJZFfj3fiye4haMVJ56XX88fo/kbC05dcqqR0wcAAAAASUVORK5CYII=" alt="logo" class="icons small-icons">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/mutestutter/" target="_blank" class="text-light"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAFiAAABYgFfJ9BTAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6MjErMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmOWQ0OGE4NC0zNDJlLTRlZDktYTA0Ni04OTllNDQwZDdkZDUiIHhtcE1NOkRvY3VtZW50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" alt="logo" class="icons small-icons">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main class="col-lg-10 offset-lg-2">
+    <div class="container">
+      <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+        <div class="my-5 py-5" data-aos="fade-up">    <span class="text-muted text-uppercase">Case study, Heuristic analysis</span>
+
+<div class="section-header">
+  <div class="col-lg-12 pb-5">
+    <h2 class="display-1 txt-fx slide-up">Citroën C3 HMI Heuristic Analysis</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 pb-5">
+    <div data-aos="fade-up" data-aos-delay="200">
+      <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
+        <li>
+          <h5>Client</h5>
+          <p>Personal project</p>
+        </li>
+        <li>
+          <h5>Year</h5>
+          <p>2024</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-8 pb-5">
+    <div class="fs-5" data-aos="fade-up" data-aos-delay="300">
+      <p>A deep dive heuristic analysis of the 2021 Citroën C3’s HMI. Exploring digital centralization, natural
+mapping, and cognitive load in automotive UX.</p>
+    </div>
+  </div>
+</div><section id="analysis-section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="portfolio-image">
+                <figure>
+                    <img src="/assets/c3-hero.webp" alt="Citroen C3 Hero Illustration" class="img-fluid">
+                    <figcaption>2021 Citroën C3 vector illustration</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-5">
+        <div class="col-lg-8">
+            <h2>Introduction</h2>
+            <p>The 2021 Citroën C3 HMI operates on a philosophy of digital centralization, moving away from the
+                distributed physical controls of previous generations. The system utilizes a 7-inch capacitive
+                touchscreen as the primary nucleus for vehicle management. Including the AC, audio, and vehicle safety
+                settings, this central hub consolidates essential functions into a unified software interface. By
+                removing traditional rotary dials and buttons, Citroën aimed to create a visually clean, minimalist
+                cabin that reduces aesthetic clutter and aligns with a modern, tech-forward brand identity.</p>
+            <p>Complementing the digital hub is a driver-focused hybrid instrument cluster. It retains large,
+                high-contrast analogue dials for engine speed and vehicle velocity to ensure immediate glanceability.
+                Positioned between these dials is a smaller digital display that handles dynamic data, such as fuel
+                consumption and traffic sign alerts.</p>
+            <p>While the steering wheel features tactile rollers and buttons to provide a secondary layer of control,
+                the overall architecture prioritizes the touchscreen for the vast majority of cabin interactions. This
+                creates an interface that is sleek and modern in appearance, though it requires the driver to navigate
+                nested digital menus for tasks that were historically handled by physical, tactile affordances.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="portfolio-image col-lg-8">
+            <figure>
+                <img src="/assets/c3-dash.webp" alt="Dashboard View" class="img-fluid">
+                <figcaption>2021 Citroën C3 dashboard</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-5">
+        <div class="col-lg-8">
+            <h2>The Problem of Digital Centralization</h2>
+            <p>In the context of automotive HMI and industrial design, digital centralization refers to the
+                consolidation of multiple, disparate physical controls and information displays into a single, unified
+                digital interface, typically a central touchscreen. This shift moves the vehicle’s operation from a
+                distributed physical architecture to a hierarchical software architecture, where these functions are
+                nested within a digital operating system.</p>
+            <p>Nevertheless, this approach has resulted in a variety of UX bottlenecks and pain points. For example,
+                according to interaction cost theory, centralization often increases the interaction cost. Interaction
+                cost is defined as the sum of physical and mental efforts required to reach a goal. By nesting
+                functions, the time-on-task increases compared to distributed physical controls (Nielsen, 1993).
+                Furthermore, Wickens' multiple resource theory is often used to critique digital centralization. It
+                suggests that humans process information better when it is distributed across different modalities (for
+                example, tactile for AC, visual for speed). Centralizing everything into the visual modality can lead to
+                information overload (Wickens, 2008).</p>
+            <p>The Swedish car magazine Vi Bilägare (2020) specifically identifies this "centralized digital-only"
+                approach as a primary pain point for driver safety and task efficiency. In addition, in their recent
+                safety briefings, Euro NCAP (2024) defines the over-reliance on centralized touchscreens as a
+                "distraction risk," leading to their 2026 mandate for the re-introduction of physical buttons for
+                critical functions.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-5">
+        <div class="col-lg-8">
+            <h2>A heuristic analysis of C3 2021 system</h2>
+            <p>This is a brief heuristic analysis of the 2021 Citroën C3 HMI based on Jakob Nielsen's 10 Usability
+                Heuristics for User Interface Design (Nielsen, 1993). The analysis focuses on key areas where the system
+                excels or falls short in terms of usability and user experience.</p>
+
+            <h3>Aesthetic and Minimalist Design vs. Visibility of System Status</h3>
+            <p>The C3 interior adheres strictly to the Aesthetic and Minimalist Design heuristic. By removing physical
+                switchgear, Citroën achieved a "clean" cockpit that reduces visual noise (Stellantis, 2021). However,
+                this creates a conflict with the Visibility of System Status. In a driving context, "status" includes
+                immediate feedback from environmental controls. Because the AC settings are nested within the digital
+                layer, the system fails to provide a persistent, "at-a-glance" confirmation of the cabin state unless
+                the specific menu is active. This lack of a dedicated status indicator for secondary tasks forces the
+                driver to divert visual attention from the primary driving task to the central hub.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="portfolio-image col-lg-8">
+            <figure>
+                <img src="/assets/c3-ac.webp" alt="HVAC controls" class="img-fluid">
+                <figcaption>2021 Citroën C3 HVAC controls</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="col-lg-8">
+            <h3>Match Between System and the Real World</h3>
+            <p>A critical failure in this model is the departure from Natural Mapping. In the "real world" of automotive
+                operation, rotary dials provide a physical metaphor for "more" or "less" that can be operated via muscle
+                memory. The 2021 C3 replaces these with digital sliders. Vi Bilägare (2020) highlights that touch-based
+                buttons lack the tactile notches of physical gear, forcing users to rely entirely on the visual modality
+                that resembles lift buttons, rather than AC controls. This, in effect, breaks the expected mental model
+                of vehicle operation where high-frequency tasks should be reachable without visual confirmation.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="portfolio-image col-lg-8">
+            <figure>
+                <img src="/assets/c3-buttons.webp" alt="Steering Wheel" class="img-fluid">
+                <figcaption>2021 Citroën C3 steering wheel controls</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="col-lg-8">
+            <h3>Flexibility and Efficiency of Use</h3>
+            <p>The system offers some flexibility through the inclusion of steering wheel hotkeys and rollers, which
+                allow for "blind" control of audio and basic trip data. The dial and buttons on the left are used to
+                control parameters on the dashboard, while the ones on the right for the music player and phone
+                functionality of the screen. However, it could be argued that the Efficiency of Use for expert users is
+                hampered by the "modal" nature of the screen. An expert driver is not able to multitask, they cannot
+                adjust the fan speed while monitoring a complex navigation junction. This task interference is a
+                significant heuristic violation in an environment where safety is essential. The system forces a serial
+                interaction model (one task at a time) in a high-stakes environment that often requires parallel
+                processing, for instance, driving and adjusting comfort at the same time.</p>
+
+            <h3>Error Prevention and User Control</h3>
+            <p>The hardware platform in the mid-tier C3 is prone to input latency. In effect, the screen transitions
+                just feel laggy and choppy very often. According to Nielsen (1993), system response times exceeding 0.1
+                seconds break the feeling of instantaneous communication. When the screen lags, it violates the Error
+                Prevention heuristic. Users often assume a touch was not registered and they tap again. This could lead
+                to a double-click error that navigates them deeper into an unwanted menu. Without a physical "Home"
+                button or a consistent "Emergency Exit" (Heuristic #3: User Control and Freedom), recovering from these
+                accidental navigations while driving becomes a high-stress operation.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="portfolio-image col-lg-8">
+            <figure>
+                <img src="/assets/c3-ac2.webp" alt="Ambiguous status" class="img-fluid">
+                <figcaption>Which one is on and which one off?</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-3">
+        <div class="col-lg-8">
+            <h3>Semiotic conflict in the use of color</h3>
+            <p>The color-coding of the HVAC icons on the 2021 C3 touchscreen presents a significant violation of the
+                Consistency and Standards heuristic, as it subverts the common mental models established in automotive
+                and consumer electronic interfaces. In the C3, the choice to use white to signify Off and blue to
+                signify On for the air vents in the vehicle creates a semiotic conflict. On the other hand, the On/Off
+                state on the buttons in bottom secession is signified by blue and desaturated blue. A driver looking to
+                turn on or off a specific vent may perceive the blue icon as an off state since it is a darker shade.
+                This chromatic ambiguity increases cognitive processing time, as the driver cannot rely on universal
+                color associations to confirm the system's status at a glance.</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-5">
+        <div class="col-lg-8">
+            <h2>Conclusion</h2>
+            <p>The 2021 Citroën C3 HMI represents a pivotal moment in automotive design where visual brand identity was
+                prioritized over functional ergonomics. While the interface succeeds in creating a sleek, "iPad-like"
+                cabin atmosphere (Auto&Design, 2016), it fundamentally fails the core UX requirement of the automotive
+                context: minimizing "eyes-off-road" time.</p>
+            <p>The transition from tactile, distributed controls to a centralized, hierarchical software architecture
+                increases the interaction cost for essential tasks. By violating basic heuristics—specifically Natural
+                Mapping and Visibility of System Status—the system forces drivers to rely on visual confirmation for
+                tasks that should be intuitive and muscle-memory-driven. Ultimately, the C3’s HMI serves as a case study
+                in how "minimalist" modernism can inadvertently sacrifice user safety and efficiency for the sake of a
+                clean aesthetic.</p>
+        </div>
+    </div>
+</section>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center mt-5">
+    <div class="col-lg-8">
+        <section id="references-section">
+            <h2>References</h2>
+            <ul class="references">
+                <li>Auto&amp;Design. (2016, September). <i>Citroën C3, designing wellbeing</i>. <a
+                        href="https://autodesignmagazine.com/en/2016/09/citroen-c3-design-del-benessere/"
+                        target="_blank">Link</a></li>
+                <li>Euro NCAP. (2024). <i>Safer interiors: The transition back to tactile controls</i>. <a
+                        href="https://www.euroncap.com/en/press-media/press-releases/euro-ncap-announces-2026-protocol-changes-to-tackle-modern-driving-risks/"
+                        target="_blank">Link</a></li>
+                <li>Nielsen, J. (1993). <i>Usability engineering</i>. Morgan Kaufmann.</li>
+                <li>Stellantis Media. (2021). <i>New Citroën C3: Ever more personality and comfort</i>. <a
+                        href="https://www.media.stellantis.com/em-en/citroen/press/new-citroen-c3-ever-more-personality-and-comfort"
+                        target="_blank">Link</a></li>
+                <li>Vi Bilägare. (2020). <i>Physical buttons outperform touchscreens</i>. <a
+                        href="https://www.vibilagare.se/english/physical-buttons-outperform-touchscreens-new-cars-test-finds"
+                        target="_blank">Link</a></li>
+                <li>Wickens, C. D. (2008). Multiple resources and performance prediction. <i>Theoretical Issues in
+                        Ergonomics Science</i>, 9(6).</li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<div class="swiper portfolio-Swiper portfolio-content py-4" data-aos="fade-up">
+  <div class="swiper-wrapper p-4">
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="star.html" title="portfolio details"><img src="/assets/star_frontpage.webp" alt="star image"
+            class="img-fluid"></a>
+      </div>
+      <div class="caption d-flex justify-content-between align-items-center">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="duck.html" title="portfolio details"><img src="/assets/Intro-1.webp" alt="star image"
+            class="img-fluid"></a>
+      </div>
+      <div class="caption d-flex justify-content-between align-items-center">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="lost-and-found.html" title="portfolio details"><img
+            src="/assets/lostandfound_frontpage.webp" alt="lostandfound image" class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="bakery.html" title="portfolio details"><img src="/assets/bakery.webp" alt="Bakery"
+            class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="muff.html" title="portfolio details"><img src="/assets/muff-frontpage.webp" alt="muff"
+            class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="c3.html" title="portfolio details"><img src="/assets/c3-index.webp" alt="c3 image"
+            class="img-fluid"></a>
+      </div>
+      <div class="caption d-flex justify-content-between align-items-center">
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="analysis.html" title="portfolio details"><img src="/assets/naslovnazalink.webp"
+            alt="Analysis image" class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="decade.html" title="portfolio details"><img src="/assets/decada-box.webp"
+            alt="Report cover image" class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="cookbook.html" title="portfolio details"><img src="/assets/101.webp" alt="101 image"
+            class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="image-holder">
+        <a href="americana.html" title="portfolio details"><img src="/assets/recipe-square.webp"
+            alt="101 image" class="img-fluid"></a>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination mt-5 pt-5"></div>
+</div>        <section id="contact" class="my-5 py-5 bg-text">
+            <div class="container">
+              <div class="row justify-content-center mb-5">
+                <div class="col-lg-6" data-aos="fade-up">
+                  <span class="text-muted text-uppercase">Personal Info</span>
+                  <h2 class="display-1 txt-fx slide-up">Contact Me</h2>
+                  <p>Write me a line at cableclark@gmail.com or reach me on social media</p>
+                  <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
+                    <li>
+                      <a href="https://www.behance.net/signified" target="_blank" class="text-light">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAGxAAABsQFhmCgOAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowYzQ5ZWFiNy04YjliLTQ3NjItYTczOC0xNmFiZTZiY2M0NWMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6MTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrbyqGYAAAKBSURBVFiFxdfPq1VVFAfwzz09f/TUjKKBqYFPKgwrqYGT6AcEIiLYqIk1qZENGtoktckDUahBNGhag0B4f0FBaATVoB8DRZQIxSBS0ffqidnr2+Dsm8fLubf7ePXOFxbnnLX22Wvt71prn7N7SQxgB/bjWTyEu5Eii0GvyA38hFP4CD/cMSpJU47m/8d002fT+cwyOO/jxGAAx5bReR/TSfSSbMPpReb3v8IjFQ505BwOVOpq7wrPVdjYYQCbK3Wfd4XJCSy0GIIj+FW9mfTxFyaxBa9j9RIDWJBktqVFFnLnBtUmDyf5ufHOqSQrk6xKsjbJinI9N6IVZydGRDeFH3EPduEurMBFfI5zOIwPy/gHcRD3Fpbm8Xt5Ho4RDEyVlT7eYn+62La32K4n+T7JlREr/4eBaow8tbG0qlzXNnSfYTvW40ncj0cLW4uafBAXcUidAuq0fKkuxGNF9y1eLPdTeBmf4hu8gPPY2jr7GCkYJs8nmS/jdxfdroF5+vo3h6VgHAYewBuN56v4QE3tPnyCr/rrwTTm1IV4rei/Hjr7GAzsaLG/XWwrk7yXZPJf2Nq0FAZuteh2lusfuIw16rZ7Fa/hOircp27F9cMmH6cLFoqjW0V+wfsN+z5sKPdz6o/bXuzBnzihLsZ2jJGCiSQbC42bkqxpUPtEGf9OQ/dSkneTvNXQ7R+WgqVsxduSnC3jb+Z2xQ/KziSXhwXQSzKLdYPEGP4xWo2n1H/OvYH3ZvCFuu834Bm8MiK9c70kv6mLqAvMV7jZkXO4UeFShwFcqnCywwBOdv1b/liFMzjegfPjONPV0Wym77eLw+nRps9elud4fkFd7B/ju+agvwE9VnmqNB3iMAAAAABJRU5ErkJggg==" alt="logo" class="icons small-icons">
+                      </a>
+                    </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/" target="_blank" class="text-light">
                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAHYAAAB2AH6XKZyAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpkMDYxZmM5Yy0yMmRkLTQ2MDMtYmQwOC1jNDNlOTg2MDY0MzMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6NDMrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvcJEVQAAAIESURBVFiFzde9axRBGMfxz54hGuILogbfUigBK02jhcRCEGws1cJCEG38I7SJ1nZWgqkkGAQrO7ESU6fwHxASLRJCLjHnJcbHYk9yTnYvGG5zPrAM88w883yZfX6zO1lEwD48xU0cUa0t4A0eoZlFxCCmcb7ixKnNYKyG8R4kh1GMZxExhxM9AIC5LCJWMdAjgEYNG9tMWq4QYKOGKBls4gFO4RxeVwAQIqIexfYwIiTPdMncnVq9VkrGZIF/qttbUAaQYbjAP7JbAPDc3+q4ivvdBsgioo4DHea8xWlc6nZyLPd1GKzjgxxuVq6KK1jHKyzJJTyM25jHBL604s/gju0OuQ4qmEoUcLjl/5z4ByLiZUQcL1DNoYh4txMVwM+kP9hq04NrXV4b3wrWWMINfC1L0gkgfT39JTHtoGW19GInAP9iQ3gvr5UJ7EnGP1YN8AzX5DtwD3eT8dkqAfpwPfFdTvpNJd+cbgD026yPMluztai7BhByJbRbqpRfZcHdqoHtLOs1QKn91wCrSX+h1a4l/oat7/x7QWyhCjp9jM7iYFvgxVY7hGP40eqftPUEHEl8o2W5sohYxv4SiJU2gPYFGzZlNVCyePvP7KDi3V7JIqIhv5r1who1LPYoOSzW5D8XvbLJP5fTT7iwy8lnMJZFfj3fiye4haMVJ56XX88fo/kbC05dcqqR0wcAAAAASUVORK5CYII=" alt="logo" class="icons small-icons">
-                     </a>
+                    </a>
                    </li>
-                   <li>
-                     <a href="https://www.instagram.com/mutestutter/" target="_blank" class="text-light"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAFiAAABYgFfJ9BTAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6MjErMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmOWQ0OGE4NC0zNDJlLTRlZDktYTA0Ni04OTllNDQwZDdkZDUiIHhtcE1NOkRvY3VtZW50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" alt="logo" class="icons small-icons">
-                     </a>
-                   </li>
-                 </ul>
-               </div>
-             </div>
-           </header>
-         </div>
-         <main class="col-lg-10 offset-lg-2">
-           <div class="container">
-             <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
-               <div class="my-5 py-5" data-aos="fade-up">                <span class="text-muted text-uppercase">Case study, Heuristic analysis</span>
-            
-            <div class="section-header">
-              <div class="col-lg-12 pb-5">
-                <h2 class="display-1 txt-fx slide-up">Citroën C3 HMI Heuristic Analysis</h2>
+                  <li>
+                      <a href="https://www.instagram.com/mutestutter/" target="_blank" class="text-light">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAFiAAABYgFfJ9BTAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6MjErMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmOWQ0OGE4NC0zNDJlLTRlZDktYTA0Ni04OTllNDQwZDdkZDUiIHhtcE1NOkRvY3VtZW50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" alt="logo" class="icons small-icons">
+                      </a>
+                    </li>
+                </ul>
+                </div>
               </div>
             </div>
-            
-            <div class="row">
-              <div class="col-lg-3 pb-5">
-                <div data-aos="fade-up" data-aos-delay="200">
-                  <ul class="list-unstyled d-flex gap-2 gap-md-5 flex-column flex-md-row">
-                    <li>
-                      <h5>Client</h5>
-                      <p>Personal project</p>
-                    </li>
-                    <li>
-                      <h5>Year</h5>
-                      <p>2024</p>
-                    </li>
-                  </ul>
+          </section>
+</div>
+</div>
+</main>
+
                 </div>
-              </div>
-              <div class="col-lg-8 pb-5">
-                <div class="fs-5" data-aos="fade-up" data-aos-delay="300">
-                  <p>A deep dive heuristic analysis of the 2021 Citroën C3’s HMI. Exploring digital centralization, natural mapping, and cognitive load in automotive UX.</p>
-                </div>
-              </div>
-            </div>                    <section id="analysis-section">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="portfolio-image">
-                                    <figure>
-                                        <img src="/assets/c3-hero.webp" alt="Citroen C3 Hero Illustration" class="img-fluid">
-                                        <figcaption>2021 Citroën C3 vector illustration</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-5">
-                            <div class="col-lg-8">
-                                <h2>Introduction</h2>
-                                <p>The 2021 Citroën C3 HMI operates on a philosophy of digital centralization, moving away from the distributed physical controls of previous generations. The system utilizes a 7-inch capacitive touchscreen as the primary nucleus for vehicle management. Including the AC, audio, and vehicle safety settings, this central hub consolidates essential functions into a unified software interface. By removing traditional rotary dials and buttons, Citroën aimed to create a visually clean, minimalist cabin that reduces aesthetic clutter and aligns with a modern, tech-forward brand identity.</p>
-                                <p>Complementing the digital hub is a driver-focused hybrid instrument cluster. It retains large, high-contrast analogue dials for engine speed and vehicle velocity to ensure immediate glanceability. Positioned between these dials is a smaller digital display that handles dynamic data, such as fuel consumption and traffic sign alerts.</p>
-                                <p>While the steering wheel features tactile rollers and buttons to provide a secondary layer of control, the overall architecture prioritizes the touchscreen for the vast majority of cabin interactions. This creates an interface that is sleek and modern in appearance, though it requires the driver to navigate nested digital menus for tasks that were historically handled by physical, tactile affordances.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="portfolio-image col-lg-8">
-                                <figure>
-                                    <img src="/assets/c3-dash.webp" alt="Dashboard View" class="img-fluid">
-                                    <figcaption>2021 Citroën C3 dashboard</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-5">
-                            <div class="col-lg-8">
-                                <h2>The Problem of Digital Centralization</h2>
-                                <p>In the context of automotive HMI and industrial design, digital centralization refers to the consolidation of multiple, disparate physical controls and information displays into a single, unified digital interface, typically a central touchscreen. This shift moves the vehicle’s operation from a distributed physical architecture to a hierarchical software architecture, where these functions are nested within a digital operating system.</p>
-                                <p>Nevertheless, this approach has resulted in a variety of UX bottlenecks and pain points. For example, according to interaction cost theory, centralization often increases the interaction cost. Interaction cost is defined as the sum of physical and mental efforts required to reach a goal. By nesting functions, the time-on-task increases compared to distributed physical controls (Nielsen, 1993). Furthermore, Wickens' multiple resource theory is often used to critique digital centralization. It suggests that humans process information better when it is distributed across different modalities (for example, tactile for AC, visual for speed). Centralizing everything into the visual modality can lead to information overload (Wickens, 2008).</p>
-                                <p>The Swedish car magazine Vi Bilägare (2020) specifically identifies this "centralized digital-only" approach as a primary pain point for driver safety and task efficiency. In addition, in their recent safety briefings, Euro NCAP (2024) defines the over-reliance on centralized touchscreens as a "distraction risk," leading to their 2026 mandate for the re-introduction of physical buttons for critical functions.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-5">
-                            <div class="col-lg-8">
-                                <h2>A heuristic analysis of C3 2021 system</h2>
-                                <p>This is a brief heuristic analysis of the 2021 Citroën C3 HMI based on Jakob Nielsen's 10 Usability Heuristics for User Interface Design (Nielsen, 1993). The analysis focuses on key areas where the system excels or falls short in terms of usability and user experience.</p>
-                                
-                                <h3>Aesthetic and Minimalist Design vs. Visibility of System Status</h3>
-                                <p>The C3 interior adheres strictly to the Aesthetic and Minimalist Design heuristic. By removing physical switchgear, Citroën achieved a "clean" cockpit that reduces visual noise (Stellantis, 2021). However, this creates a conflict with the Visibility of System Status. In a driving context, "status" includes immediate feedback from environmental controls. Because the AC settings are nested within the digital layer, the system fails to provide a persistent, "at-a-glance" confirmation of the cabin state unless the specific menu is active. This lack of a dedicated status indicator for secondary tasks forces the driver to divert visual attention from the primary driving task to the central hub.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="portfolio-image col-lg-8">
-                                <figure>
-                                    <img src="/assets/c3-ac.webp" alt="HVAC controls" class="img-fluid">
-                                    <figcaption>2021 Citroën C3 HVAC controls</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="col-lg-8">
-                                <h3>Match Between System and the Real World</h3>
-                                <p>A critical failure in this model is the departure from Natural Mapping. In the "real world" of automotive operation, rotary dials provide a physical metaphor for "more" or "less" that can be operated via muscle memory. The 2021 C3 replaces these with digital sliders. Vi Bilägare (2020) highlights that touch-based buttons lack the tactile notches of physical gear, forcing users to rely entirely on the visual modality that resembles lift buttons, rather than AC controls. This, in effect, breaks the expected mental model of vehicle operation where high-frequency tasks should be reachable without visual confirmation.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="portfolio-image col-lg-8">
-                                <figure>
-                                    <img src="/assets/c3-buttons.webp" alt="Steering Wheel" class="img-fluid">
-                                    <figcaption>2021 Citroën C3 steering wheel controls</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="col-lg-8">
-                                <h3>Flexibility and Efficiency of Use</h3>
-                                <p>The system offers some flexibility through the inclusion of steering wheel hotkeys and rollers, which allow for "blind" control of audio and basic trip data. The dial and buttons on the left are used to control parameters on the dashboard, while the ones on the right for the music player and phone functionality of the screen. However, it could be argued that the Efficiency of Use for expert users is hampered by the "modal" nature of the screen. An expert driver is not able to multitask, they cannot adjust the fan speed while monitoring a complex navigation junction. This task interference is a significant heuristic violation in an environment where safety is essential. The system forces a serial interaction model (one task at a time) in a high-stakes environment that often requires parallel processing, for instance, driving and adjusting comfort at the same time.</p>
-                                
-                                <h3>Error Prevention and User Control</h3>
-                                <p>The hardware platform in the mid-tier C3 is prone to input latency. In effect, the screen transitions just feel laggy and choppy very often. According to Nielsen (1993), system response times exceeding 0.1 seconds break the feeling of instantaneous communication. When the screen lags, it violates the Error Prevention heuristic. Users often assume a touch was not registered and they tap again. This could lead to a double-click error that navigates them deeper into an unwanted menu. Without a physical "Home" button or a consistent "Emergency Exit" (Heuristic #3: User Control and Freedom), recovering from these accidental navigations while driving becomes a high-stress operation.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="portfolio-image col-lg-8">
-                                <figure>
-                                    <img src="/assets/c3-ac2.webp" alt="Ambiguous status" class="img-fluid">
-                                    <figcaption>Which one is on and which one off?</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-3">
-                            <div class="col-lg-8">
-                                <h3>Semiotic conflict in the use of color</h3>
-                                <p>The color-coding of the HVAC icons on the 2021 C3 touchscreen presents a significant violation of the Consistency and Standards heuristic, as it subverts the common mental models established in automotive and consumer electronic interfaces. In the C3, the choice to use white to signify Off and blue to signify On for the air vents in the vehicle creates a semiotic conflict. On the other hand, the On/Off state on the buttons in bottom secession is signified by blue and desaturated blue. A driver looking to turn on or off a specific vent may perceive the blue icon as an off state since it is a darker shade. This chromatic ambiguity increases cognitive processing time, as the driver cannot rely on universal color associations to confirm the system's status at a glance.</p>
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center align-items-center mt-5">
-                            <div class="col-lg-8">
-                                <h2>Conclusion</h2>
-                                <p>The 2021 Citroën C3 HMI represents a pivotal moment in automotive design where visual brand identity was prioritized over functional ergonomics. While the interface succeeds in creating a sleek, "iPad-like" cabin atmosphere (Auto&Design, 2016), it fundamentally fails the core UX requirement of the automotive context: minimizing "eyes-off-road" time.</p>
-                                <p>The transition from tactile, distributed controls to a centralized, hierarchical software architecture increases the interaction cost for essential tasks. By violating basic heuristics—specifically Natural Mapping and Visibility of System Status—the system forces drivers to rely on visual confirmation for tasks that should be intuitive and muscle-memory-driven. Ultimately, the C3’s HMI serves as a case study in how "minimalist" modernism can inadvertently sacrifice user safety and efficiency for the sake of a clean aesthetic.</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="row d-flex justify-content-center align-items-center mt-5">
-                    <div class="col-lg-8">
-                        <section id="references-section">
-                            <h2>References</h2>
-                            <ul class="references">
-                                <li>Auto&amp;Design. (2016, September). <i>Citroën C3, designing wellbeing</i>. <a href="https://autodesignmagazine.com/en/2016/09/citroen-c3-design-del-benessere/" target="_blank">Link</a></li>
-                                <li>Euro NCAP. (2024). <i>Safer interiors: The transition back to tactile controls</i>. <a href="https://www.euroncap.com/en/press-media/press-releases/euro-ncap-announces-2026-protocol-changes-to-tackle-modern-driving-risks/" target="_blank">Link</a></li>
-                                <li>Nielsen, J. (1993). <i>Usability engineering</i>. Morgan Kaufmann.</li>
-                                <li>Stellantis Media. (2021). <i>New Citroën C3: Ever more personality and comfort</i>. <a href="https://www.media.stellantis.com/em-en/citroen/press/new-citroen-c3-ever-more-personality-and-comfort" target="_blank">Link</a></li>
-                                <li>Vi Bilägare. (2020). <i>Physical buttons outperform touchscreens</i>. <a href="https://www.vibilagare.se/english/physical-buttons-outperform-touchscreens-new-cars-test-finds" target="_blank">Link</a></li>
-                                <li>Wickens, C. D. (2008). Multiple resources and performance prediction. <i>Theoretical Issues in Ergonomics Science</i>, 9(6).</li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-
-                        <div class="swiper portfolio-Swiper portfolio-content py-4" data-aos="fade-up">
-                              <div class="swiper-wrapper p-4">
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="c3.html" title="portfolio details"><img src="/assets/c3-index.webp"
-                                        alt="c3 image" class="img-fluid"></a>
-                                  </div>
-                                  <div class="caption d-flex justify-content-between align-items-center">
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="star.html" title="portfolio details"><img src="/assets/star_frontpage.webp"
-                                        alt="star image" class="img-fluid"></a>
-                                  </div>
-                                  <div class="caption d-flex justify-content-between align-items-center">
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="duck.html" title="portfolio details"><img src="/assets/Intro-1.webp"
-                                        alt="star image" class="img-fluid"></a>
-                                  </div>
-                                  <div class="caption d-flex justify-content-between align-items-center">
-                                  </div>
-                                </div>
-                                  <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="lost-and-found.html" title="portfolio details"><img src="/assets/lostandfound_frontpage.webp"
-                                        alt="lostandfound image" class="img-fluid"></a>
-                                  </div>
-                                </div>
-                                 <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="bakery.html" title="portfolio details"><img src="/assets/bakery.webp"
-                                        alt="Bakery" class="img-fluid"></a>
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="muff.html" title="portfolio details"><img src="/assets/muff-frontpage.webp"
-                                        alt="muff" class="img-fluid"></a>
-                                  </div>
-                                </div>
-                              
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="analysis.html" title="portfolio details"><img src="/assets/naslovnazalink.webp"
-                                        alt="Analysis image" class="img-fluid"></a>
-                                  </div>
-                                </div>
-                                <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="decade.html" title="portfolio details"><img src="/assets/decada-box.webp"
-                                        alt="Report cover image" class="img-fluid"></a>
-                                  </div> 
-                                </div>
-                                 <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="cookbook.html" title="portfolio details"><img src="/assets/101.webp"
-                                        alt="101 image" class="img-fluid"></a>
-                                  </div> 
-                                </div>
-                                 <div class="swiper-slide">
-                                  <div class="image-holder">
-                                    <a href="americana.html" title="portfolio details"><img src="/assets/recipe-square.webp"
-                                        alt="101 image" class="img-fluid"></a>
-                                  </div> 
-                                </div>
-                              </div>
-                              <div class="swiper-pagination mt-5 pt-5"></div>
-                            </div>                        <section id="contact" class="my-5 py-5 bg-text">
-                            <div class="container">
-                              <div class="row justify-content-center mb-5">
-                                <div class="col-lg-6" data-aos="fade-up">
-                                  <span class="text-muted text-uppercase">Personal Info</span>
-                                  <h2 class="display-1 txt-fx slide-up">Contact Me</h2>
-                                  <p>Write me a line at cableclark@gmail.com or reach me on social media</p>
-                                  <ul class="list-unstyled d-flex justify-content-start flex-wrap gap-3">
-                                    <li>
-                                      <a href="https://www.behance.net/signified" target="_blank" class="text-light">
-                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAGxAAABsQFhmCgOAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjE2KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MGM0OWVhYjctOGI5Yi00NzYyLWE3MzgtMTZhYmU2YmNjNDVjIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowYzQ5ZWFiNy04YjliLTQ3NjItYTczOC0xNmFiZTZiY2M0NWMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzU6NTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MDgzYjY1ZS01MWMyLTRjYWMtODljYi0xMWFlNmM2NjFmOWEiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6MTYrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrbyqGYAAAKBSURBVFiFxdfPq1VVFAfwzz09f/TUjKKBqYFPKgwrqYGT6AcEIiLYqIk1qZENGtoktckDUahBNGhag0B4f0FBaATVoB8DRZQIxSBS0ffqidnr2+Dsm8fLubf7ePXOFxbnnLX22Wvt71prn7N7SQxgB/bjWTyEu5Eii0GvyA38hFP4CD/cMSpJU47m/8d002fT+cwyOO/jxGAAx5bReR/TSfSSbMPpReb3v8IjFQ505BwOVOpq7wrPVdjYYQCbK3Wfd4XJCSy0GIIj+FW9mfTxFyaxBa9j9RIDWJBktqVFFnLnBtUmDyf5ufHOqSQrk6xKsjbJinI9N6IVZydGRDeFH3EPduEurMBFfI5zOIwPy/gHcRD3Fpbm8Xt5Ho4RDEyVlT7eYn+62La32K4n+T7JlREr/4eBaow8tbG0qlzXNnSfYTvW40ncj0cLW4uafBAXcUidAuq0fKkuxGNF9y1eLPdTeBmf4hu8gPPY2jr7GCkYJs8nmS/jdxfdroF5+vo3h6VgHAYewBuN56v4QE3tPnyCr/rrwTTm1IV4rei/Hjr7GAzsaLG/XWwrk7yXZPJf2Nq0FAZuteh2lusfuIw16rZ7Fa/hOircp27F9cMmH6cLFoqjW0V+wfsN+z5sKPdz6o/bXuzBnzihLsZ2jJGCiSQbC42bkqxpUPtEGf9OQ/dSkneTvNXQ7R+WgqVsxduSnC3jb+Z2xQ/KziSXhwXQSzKLdYPEGP4xWo2n1H/OvYH3ZvCFuu834Bm8MiK9c70kv6mLqAvMV7jZkXO4UeFShwFcqnCywwBOdv1b/liFMzjegfPjONPV0Wym77eLw+nRps9elud4fkFd7B/ju+agvwE9VnmqNB3iMAAAAABJRU5ErkJggg==" alt="logo" class="icons small-icons">
-                                      </a>
-                                    </li>
-                                  <li>
-                                    <a href="https://www.linkedin.com/in/igor-stojanovski-540b08104/" target="_blank" class="text-light">
-                                       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAHYAAAB2AH6XKZyAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjQzKzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6ZDA2MWZjOWMtMjJkZC00NjAzLWJkMDgtYzQzZTk4NjA2NDMzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpkMDYxZmM5Yy0yMmRkLTQ2MDMtYmQwOC1jNDNlOTg2MDY0MzMiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6MzY6MTcrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MWYyNDk4ZS05NmQ0LTQzYzAtOTQwZS1lNWRmN2FhZDM4MDAiIHN0RXZ0OndoZW49IjIwMjUtMTItMjhUMTM6NDA6NDMrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi42IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvcJEVQAAAIESURBVFiFzde9axRBGMfxz54hGuILogbfUigBK02jhcRCEGws1cJCEG38I7SJ1nZWgqkkGAQrO7ESU6fwHxASLRJCLjHnJcbHYk9yTnYvGG5zPrAM88w883yZfX6zO1lEwD48xU0cUa0t4A0eoZlFxCCmcb7ixKnNYKyG8R4kh1GMZxExhxM9AIC5LCJWMdAjgEYNG9tMWq4QYKOGKBls4gFO4RxeVwAQIqIexfYwIiTPdMncnVq9VkrGZIF/qttbUAaQYbjAP7JbAPDc3+q4ivvdBsgioo4DHea8xWlc6nZyLPd1GKzjgxxuVq6KK1jHKyzJJTyM25jHBL604s/gju0OuQ4qmEoUcLjl/5z4ByLiZUQcL1DNoYh4txMVwM+kP9hq04NrXV4b3wrWWMINfC1L0gkgfT39JTHtoGW19GInAP9iQ3gvr5UJ7EnGP1YN8AzX5DtwD3eT8dkqAfpwPfFdTvpNJd+cbgD026yPMluztai7BhByJbRbqpRfZcHdqoHtLOs1QKn91wCrSX+h1a4l/oat7/x7QWyhCjp9jM7iYFvgxVY7hGP40eqftPUEHEl8o2W5sohYxv4SiJU2gPYFGzZlNVCyePvP7KDi3V7JIqIhv5r1who1LPYoOSzW5D8XvbLJP5fTT7iwy8lnMJZFfj3fiye4haMVJ56XX88fo/kbC05dcqqR0wcAAAAASUVORK5CYII=" alt="logo" class="icons small-icons">
-                                    </a>
-                                   </li>
-                                  <li>
-                                      <a href="https://www.instagram.com/mutestutter/" target="_blank" class="text-light">
-                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAFiAAABYgFfJ9BTAAAFw2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDMgNzkuOTY5MGE4N2ZjLCAyMDI1LzAzLzA2LTIwOjUwOjE2ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuNiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjUtMTItMjhUMTM6MzU6MjErMDE6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI1LTEyLTI4VDEzOjQwOjU0KzAxOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmOWQ0OGE4NC0zNDJlLTRlZDktYTA0Ni04OTllNDQwZDdkZDUiIHhtcE1NOkRvY3VtZW50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" alt="logo" class="icons small-icons">
-                                      </a>
-                                    </li>
-                                </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/1.1.0/js/chocolat.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="/js/script.js"></script>
+</body>
+</html></body>
 
-                    </div>
-                </div>
-            </div>
-        </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/1.1.0/js/chocolat.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-       <script src="/js/script.js"></script>
-    </body>
-    </html></body>
 </html>
