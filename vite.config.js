@@ -28,6 +28,7 @@ export default defineConfig({
         lostandfound: resolve(__dirname, 'lost-and-found.html'),
         muff: resolve(__dirname, 'muff.html'),
         star: resolve(__dirname, 'star.html'),
+        litter: resolve(__dirname, 'litter.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
