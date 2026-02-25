@@ -29,6 +29,7 @@ export default defineConfig({
         muff: resolve(__dirname, 'muff.html'),
         star: resolve(__dirname, 'star.html'),
         litter: resolve(__dirname, 'litter.html'),
+        recipemotion: resolve(__dirname, 'recipes-motion.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
