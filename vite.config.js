@@ -30,6 +30,7 @@ export default defineConfig({
         star: resolve(__dirname, 'star.html'),
         litter: resolve(__dirname, 'litter.html'),
         recipemotion: resolve(__dirname, 'recipes-motion.html'),
+        heart: resolve(__dirname, 'heart.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
