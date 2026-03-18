@@ -22,8 +22,8 @@
 
   <link rel="icon" type="image/x-icon" href="./images/favicon.png">
   <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" <meta name="apple-mobile-web-app-status-bar-style"
+    content="yes">
 
   {{> scripts }}
 </head>
@@ -39,46 +39,41 @@
     </div>
     <div class="col-lg-5 d-flex justify-content-center reset-flex">
       <div class="banner-content my-1 pt-1 my-lg-5" data-aos="fade-in">
-        <span class="text-muted">I'm Igor, a visual designer</span>
+        <span class="text-muted">A design studio</span>
         <h1 class="banner-title display-xl txt-fx text-fx slide-up">Ideas into matter</h1>
+        <a href="#portfolio" class="btn btn-primary btn-dark button py-3 px-4" data-aos="fade-up"
+          data-aos-delay="300">View
+          My Work</a>
       </div>
+
     </div>
   </div>
-
-  <div class="row mt-3">
-    <div class="col-lg-3">
-      <div class="icon-box" data-aos="fade-up">
-        <span>01</span>
-        <h3 class="sub-heading"> Graphic Design</h3>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-        <span>02</span>
-        <h3 class="sub-heading">Web and UI</h3>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-        <span>03</span>
-        <h3 class="sub-heading">3d and Motion </h3>
-      </div>
-    </div>
-    <div class="col-lg-3 my-3">
-      <a href="#portfolio" class="btn btn-primary btn-dark button py-3 px-4" data-aos="fade-up"
-        data-aos-delay="300">View My Work</a>
-    </div>
   </div>
 </section>
+
+
+<section id="portfolio" class="bg-text py-5">
+  <div class="section-header" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <h2 class="txt-fx slide-up display-3">Projects</h2>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="mt-3">The following projects represent a portfolio of my work in graphic, UI/Web and
+          motion design. </div>
+      </div>
+    </div>
+  </div>
+  {{> portfolio }}
+
+</section>
+
 
 <section id="about" class="py-5 bg-text">
   <div class="row justify-content-center mb-5">
     <div class="col-lg-6" data-aos="fade-up">
-      <span class="text-muted text-uppercase">introduction</span>
       <h2 class="display-1 txt-fx slide-up">About me</h2>
-      <p>I am visual designer working for over a decade for my own studio, Signified. If you are thinking if it is just
-        me
-        in the bedroom, you would be completely wrong. It’s in the living room.</p>
+      <p>I am visual designer working for over a decade for my own studio, Signified.</p>
       <p>I first stumbled across the art of graphic design in high school. It was the late '90s, a PC and the internet
         made their way into our home. At that time, I was a kid who played bass guitar and was
         heavily into
@@ -96,23 +91,6 @@
         coding, as well). And from there on, it has been “all work and no play makes Jack a dull boy” for me.
     </div>
   </div>
-</section>
-
-<section id="portfolio" class="bg-text py-5">
-  <div class="section-header" data-aos="fade-up">
-    <div class="row justify-content-center">
-      <div class="col-lg-4">
-        <span class="text-muted text-uppercase">What I do</span>
-        <h2 class="txt-fx slide-up display-3">Projects</h2>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up">
-        <p>The following projects represent a portfolio of my work in graphic design, UI/web and
-          a bit of motion design. Older work is understandably ommited. </p>
-      </div>
-    </div>
-  </div>
-  {{> portfolio }}
-
 </section>
 
 <section id="experience" class="my-5 py-5 bg-text">
@@ -143,11 +121,6 @@
           <li>Managed production of departmental materials and magazines</li>
         </ul>
       </div>
-      <div class="data-info" data-aos="fade-up" data-aos-delay="400">
-        <span class="meta-date">2008 - 2014</span>
-        <h3 class="info-title">Website editor</h3>
-        <p>Coalition Margins</p>
-      </div>
       <div class="data-info " data-aos="fade-up" data-aos-delay="500">
         <span class="meta-date">2006 - 2008</span>
         <h3 class="info-title">Social marketing officer</h3>
@@ -158,106 +131,40 @@
         <h3 class="info-title">Contributor and reporter </h3>
         <p>AG magazine, Spic daily newspaper </p>
       </div>
-      <div class="data-info " data-aos="fade-up" data-aos-delay="700">
-        <span class="meta-date">2007</span>
-        <h3 class="info-title">Public Relations</h3>
-        <p>Macedonian association for free sexual orientation</p>
-      </div>
     </div>
 
     <div class="col-lg-6 pb-5">
-      <h2 class="display-4 txt-fx slide-up">Certificates</h2>
-      <div class="data-info" data-aos="fade-up">
-        <span class="meta-date">2026</span>
-        <h5 class="info-title">Agile with Atlassian Jira</h5>
-        <p>Atlassian <a href="https://www.coursera.org/account/accomplishments/certificate/RP2MF9OTFZ8M"
-            target="_blank">(Link)</a></p>
-      </div>
-      <div class="data-info" data-aos="fade-up">
-        <span class="meta-date">2026</span>
-        <h5 class="info-title">Introduction to Agile Development and Scrum</h3>
-          <p>IBM <a href="https://www.coursera.org/account/accomplishments/certificate/3P4MMG9QZKVU"
-              target="_blank">(Link)</a></p>
-      </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2025</span>
-        <h5 class="info-title">User Experience Research and Design</h5>
-        <p>University of Michigan <a
-            href="https://www.coursera.org/account/accomplishments/specialization/certificate/DK4ZXBQW7UOY"
-            target="_blank">(Certificate link)</a></p>
-      </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2025</span>
-        <h5 class="info-title">UI / UX Design</h5>
-        <p>California Institute of the Arts <a
-            href="https://www.coursera.org/account/accomplishments/specialization/certificate/TP8KTH55DBC0"
-            target="_blank">(Certificate link)</a></p>
-      </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2025</span>
-        <h5 class="info-title">Intermediate to Advanced: Professional Figma UI / UX Design </h5>
-        <p>Skillshare <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/X57L0UMMRS99"
-            target="_blank">(Certificate link)</a></p>
-      </div>
-      <div class="data-info" data-aos="fade-up">
-        <span class="meta-date">2025</span>
-        <h5 class="info-title">Google UX Design</h5>
-        <p>Google <a href="https://www.coursera.org/account/accomplishments/specialization/TN0XOSAC8YOT"
-            target="_blank">(Certificate link)</a></p>
+      <h2 class="display-4 txt-fx slide-up">Education</h2>
+      <div class="data-info py-3" data-aos="fade-up">
+        <span class="meta-date">2000 - 2007</span>
+        <h3 class="info-title">Bachelor of Arts - Philosophy</h3>
+        <p>Ss. Cyril and Methodius University, Skopje</p>
       </div>
       <div class="data-info" data-aos="fade-up" data-aos-delay="100">
-        <span class="meta-date">2025</span>
-        <h5 class="info-title">Microsoft UX Design</h5>
-        <p>Microsoft <a href="https://www.coursera.org/account/accomplishments/specialization/1TJWBDGF7C9C"
-            target="_blank">(Certificate link)</a></p>
+        <span class="meta-date">2010 - 2013</span>
+        <h3 class="info-title">Master of Arts - Cultural Studies</h3>
+        <p>Euro-Balkan University, Skopje</p>
       </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2018</span>
-        <h5 class="info-title"> Backend PHP development </h5>
-        <p>ITAcademy by LINKgroup</p>
-      </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2017</span>
-        <h5 class="info-title">Web Page, Digital/Multimedia and Information Resources Design </h5>
-        <p>ITAcademy by LINKgroup</p>
-      </div>
-      <div class="data-info " data-aos="fade-up">
-        <span class="meta-date">2006-2007</span>
-        <h5 class="info-title">Specialist studies, Print Journalism </h5>
-        <p>Macedonian Institute for Media</p>
-      </div>
-    </div>
 
-    <div class="row d-flex flex-wrap" data-aos="fade-up">
-      <div class="col-lg-6 pb-5">
-        <h2 class="display-4 txt-fx slide-up">Education</h2>
-        <div class="data-info py-3" data-aos="fade-up">
-          <span class="meta-date">2000 - 2007</span>
-          <h3 class="info-title">Bachelor of Arts - Philosophy</h3>
-          <p>Ss. Cyril and Methodius University, Skopje</p>
-        </div>
-        <div class="data-info" data-aos="fade-up" data-aos-delay="100">
-          <span class="meta-date">2010 - 2013</span>
-          <h3 class="info-title">Master of Arts - Cultural Studies</h3>
-          <p>Euro-Balkan University, Skopje</p>
-        </div>
+
+      <h2 class="display-4 txt-fx slide-up">Volunteer work</h2>
+      <div class="data-info" data-aos="fade-up"><span class="meta-date">2011</span>
+        <h3 class="info-title">Graphic designer</h3>
+        <p>"Don't buy, adopt" campaign</p>
       </div>
-      <div class="col-lg-6 pb-5">
-        <h2 class="display-4 txt-fx slide-up">Volunteer work</h2>
-        <div class="data-info" data-aos="fade-up"><span class="meta-date">2011</span>
-          <h3 class="info-title">Graphic designer</h3>
-          <p>"Don't buy, adopt" campaign</p>
-        </div>
-        <div class="data-info" data-aos="fade-up"><span class="meta-date">2007</span>
-          <h3 class="info-title">Project coordinator</h3>
-          <p>Anti-stigma campaign “Prejudice overdose”, Skopje</p>
-        </div>
-        <div class="data-info" data-aos="fade-up"><span class="meta-date">2004 - 2006</span>
-          <h3 class="info-title">Radio Host</h3>
-          <p>Noise Poetry at Kanal 103</p>
-        </div>
+      <div class="data-info" data-aos="fade-up"><span class="meta-date">2007</span>
+        <h3 class="info-title">Project coordinator</h3>
+        <p>Anti-stigma campaign “Prejudice overdose”, Skopje</p>
+      </div>
+      <div class="data-info" data-aos="fade-up"><span class="meta-date">2004 - 2006</span>
+        <h3 class="info-title">Radio Host</h3>
+        <p>Noise Poetry at Kanal 103</p>
       </div>
     </div>
+  </div>
+  </div>
+
+
 </section>
 
 {{> contact }}
