@@ -31,7 +31,8 @@ export default defineConfig({
         litter: resolve(__dirname, 'litter.html'),
         recipemotion: resolve(__dirname, 'recipes-motion.html'),
         heart: resolve(__dirname, 'heart.html'),
-        heart: resolve(__dirname, 'bookcovers.html'),
+        bookcovers: resolve(__dirname, 'bookcovers.html'),
+        reels: resolve(__dirname, 'reels.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {

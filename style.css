@@ -801,3 +801,10 @@ body {
     filter: grayscale(0%);
   }
 }
+
+.responsive-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  /* Matches standard YouTube dimensions */
+}
