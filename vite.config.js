@@ -33,6 +33,7 @@ export default defineConfig({
         heart: resolve(__dirname, 'heart.html'),
         bookcovers: resolve(__dirname, 'bookcovers.html'),
         reels: resolve(__dirname, 'reels.html'),
+        covid: resolve(__dirname, 'covid.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
