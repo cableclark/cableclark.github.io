@@ -34,6 +34,7 @@ export default defineConfig({
         bookcovers: resolve(__dirname, 'bookcovers.html'),
         reels: resolve(__dirname, 'reels.html'),
         covid: resolve(__dirname, 'covid.html'),
+        love: resolve(__dirname, 'love.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
