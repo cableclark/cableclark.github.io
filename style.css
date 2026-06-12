@@ -775,7 +775,7 @@ body {
 
 @media only screen and (max-width: 991px) {
   .mobile-margin {
-    margin: 2rem !important;
+    padding-left: 2rem !important;
   }
 }
 
@@ -818,6 +818,6 @@ body {
   /* Mask: radius of 50% centered at X:50% Y:50% */
 }
 
-.pb-60 {
+.pb-0 {
   padding-bottom: 60px;
 }
