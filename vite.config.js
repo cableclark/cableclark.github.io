@@ -35,6 +35,7 @@ export default defineConfig({
         reels: resolve(__dirname, 'reels.html'),
         covid: resolve(__dirname, 'covid.html'),
         love: resolve(__dirname, 'love.html'),
+        shortform: resolve(__dirname, 'shortform.html'),
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
