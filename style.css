@@ -808,3 +808,16 @@ body {
   aspect-ratio: 16 / 9;
   /* Matches standard YouTube dimensions */
 }
+
+.video-hero {
+
+  /* Must match width for a perfect circle */
+  object-fit: cover;
+  /* Prevents the video from squishing inside the circle */
+  clip-path: circle(50% at 50% 50%);
+  /* Mask: radius of 50% centered at X:50% Y:50% */
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
