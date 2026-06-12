@@ -233,7 +233,7 @@ a {
 
 [data-bs-theme=dark] .bg-white,
 [data-bs-theme=dark] .bg-light {
-  --bs-bg-opacity: 0.1;
+  --bs-bg-opacity: 0.5;
 }
 
 /* end of Bootstrap Color Theme */
@@ -734,9 +734,9 @@ body {
 }
 
 #header-nav {
-  background: var(--bs-dark);
   opacity: 1;
-  backdrop-filter: blur(26px)
+  backdrop-filter: blur(36px);
+  background: rgba(0, 0, 0, 0.7) !important;
 }
 
 .container,
