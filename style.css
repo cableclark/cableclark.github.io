@@ -419,6 +419,9 @@ header {
 /* .icon-box {
   color: var(--bs-gray);
 } */
+img {
+  border-radius: 6px;
+}
 
 /*----- Skills
 --------------------------------------------------------------*/

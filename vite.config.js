@@ -36,6 +36,8 @@ export default defineConfig({
         covid: resolve(__dirname, 'covid.html'),
         love: resolve(__dirname, 'love.html'),
         shortform: resolve(__dirname, 'shortform.html'),
+        junk: resolve(__dirname, 'junk.html'),
+
         // Add other pages here: about: resolve(__dirname, 'src/about.html')
       },
       output: {
