@@ -817,7 +817,7 @@ body {
   /* Must match width for a perfect circle */
   object-fit: cover;
   /* Prevents the video from squishing inside the circle */
-  border-radius: 12px;
+  border-radius: 50%
   /* Mask: radius of 50% centered at X:50% Y:50% */
 }
 
